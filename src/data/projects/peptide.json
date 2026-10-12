@@ -1,0 +1,12 @@
+{
+  "title": "Peptide Calculator",
+  "category": "Mobile UX \u00b7 Research utility",
+  "tagline": "Making a detailed calculator easier to understand.",
+  "image": "/images/peptide.png",
+  "summary": "A calculator interface designed to clarify quantities, syringe selection, and results for research-related workflows.",
+  "contribution": "Used legible forms, interactive controls, and visual feedback to support calculation workflows.",
+  "highlights": "Input clarity, helpful visual cues, legible calculation results.",
+  "notes": "Interface portfolio example; not medical advice or validated dosage guidance.",
+  "featured": true,
+  "order": 4
+}

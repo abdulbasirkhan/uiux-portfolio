@@ -1,0 +1,53 @@
+media:
+  input: public/images
+  output: /images
+content:
+  - name: site
+    label: Homepage & About
+    type: file
+    path: src/data/site.json
+    format: json
+    fields:
+      - { name: name, label: Name, type: string, required: true }
+      - { name: eyebrow, label: Hero label, type: string }
+      - { name: headline, label: Main headline, type: text }
+      - { name: heroBackgroundStart, label: Hero start color (hex), type: string, description: "Example: #342D55" }
+      - { name: heroBackgroundEnd, label: Hero end color (hex), type: string, description: "Example: #635383" }
+      - { name: heroBackgroundImage, label: Hero background image (optional), type: image }
+      - { name: heroBackgroundPosition, label: Background image position, type: string, description: "Example: center or right center" }
+      - { name: heroTextColor, label: Hero text color (hex), type: string }
+      - { name: heroVisualImage, label: Hero illustration (optional; replaces default illustration), type: image }
+      - { name: heroVisualPosition, label: Hero illustration placement, type: string, description: "Example: center or right center" }
+      - { name: heroVisualAlt, label: Hero illustration alternative text, type: string }
+      - { name: intro, label: Intro, type: text }
+      - { name: aboutTitle, label: About heading, type: string }
+      - { name: aboutLead, label: About introduction, type: text }
+      - { name: about, label: About story paragraph, type: text }
+      - { name: aboutExtra, label: About background paragraph, type: text }
+      - { name: aboutPhoto, label: About portrait photo (optional), type: image }
+      - { name: aboutPhotoPosition, label: Portrait crop position, type: string, description: "Example: center 30%" }
+      - { name: aboutBackgroundStart, label: About background start color (hex), type: string }
+      - { name: aboutBackgroundEnd, label: About background end color (hex), type: string }
+      - { name: email, label: Contact email, type: string }
+      - { name: location, label: Location, type: string }
+      - { name: linkedin, label: LinkedIn URL, type: string }
+  - name: projects
+    label: Portfolio Projects
+    type: collection
+    path: src/data/projects
+    format: json
+    filename: "{primary}.json"
+    view:
+      primary: title
+      fields: [title, category, featured, order]
+    fields:
+      - { name: title, label: Project title, type: string, required: true }
+      - { name: category, label: Category, type: string }
+      - { name: tagline, label: Card headline, type: string }
+      - { name: image, label: Project image, type: image }
+      - { name: summary, label: Overview, type: text }
+      - { name: contribution, label: My contribution, type: text }
+      - { name: highlights, label: UX highlights, type: text }
+      - { name: notes, label: Project status / caveats, type: text }
+      - { name: featured, label: Feature on homepage, type: boolean }
+      - { name: order, label: Display order, type: number }

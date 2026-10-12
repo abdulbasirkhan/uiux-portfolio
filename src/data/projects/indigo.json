@@ -1,0 +1,12 @@
+{
+  "title": "Indigo",
+  "category": "Mobile product \u00b7 Field operations",
+  "tagline": "Keeping technicians moving, without the clutter.",
+  "image": "/images/indigo.png",
+  "summary": "Mobile experience for managing and tracking technician service jobs.",
+  "contribution": "Focused on making an extensive, time-consuming workflow easier to navigate with contextual information and task states.",
+  "highlights": "Ticket statuses, job views, progress visibility, contextual navigation.",
+  "notes": "Project materials from existing portfolio. Outcomes to be confirmed.",
+  "featured": true,
+  "order": 3
+}
