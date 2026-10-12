@@ -1,12 +1,12 @@
 {
   "title": "PSEB Portal",
-  "category": "Government platform \u00b7 Enterprise UX",
-  "tagline": "Beyond registration: connecting Pakistan\u2019s IT ecosystem.",
-  "image": "/images/pseb.png",
-  "summary": "A multi-role platform combining integrated registration, document verification, business collaboration, offerings, opportunities, and learning.",
-  "contribution": "Designed experiences for PSEB authorities, company administrators, and regular users. The proposed expansion aimed to build an industry community while improving administrative workflows.",
+  "category": "Government platform · SaaS",
+  "tagline": "Beyond registration: connecting Pakistan’s IT ecosystem.",
+  "image": "/images/PSEB App Tech Workspace.png",
+  "summary": "Rethinking the design of the existing platform to improve their regulatory processes, and designing multi-role platform combining integrated registration, licensing, business collaboration, offerings, opportunities, and learning.",
+  "contribution": "Designed the experience understanding the need for PSEB authorities to give off a certain official format. This combined with modern UI and imagery to attract the average user and company employer. I proposed the aim to build an industry community by allowing better access to contact other entities on the platform while improving administrative workflows. The average IT user would benefit from subscribing to services and mentoring by more seasoned individuals on the platform, also allowing them to use a trusted platform to showcase their progress and certifications.\nThe end result was a platform that was cohesive in design, followed a hierarchy in which information was provided to its user. The platform easily flows from one screen to the next without overwhelming the user with an immediate fully open dashboard.",
   "highlights": "Registration flow visibility, differentiated role permissions, opportunity discovery, products and services, webinars and messaging.",
-  "notes": "Design screenshots and client-supplied project description. Specific deployment scope and metrics to be confirmed.",
+  "notes": "Design screenshots and client-supplied project description. Specific deployment scope, metrics or precise information of the platform purposely kept confidential. All numbers and other names used in the images are purely fictional, and are used for illustrative purposes.",
   "featured": true,
   "order": 1
 }
