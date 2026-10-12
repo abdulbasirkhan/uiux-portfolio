@@ -16,9 +16,9 @@ const pseb=Astro.params.slug==='pseb';
 <div class="hero-img"><img src={asset(project.image)} alt={`${project.title} design presentation`} /></div>
 <div class="case-content"><aside><span>PROJECT SNAPSHOT</span><p>{project.category}</p><span>FOCUS</span><p>UI/UX & visual design</p></aside>
 <div class="story">
-<section><h2>Step 1: The challenge</h2><p>{project.summary}</p></section>
-<section><h2>Step 2: My approach</h2><p>{project.contribution}</p></section>
-<section><h2>Step 3: The experience</h2><p>{project.highlights}</p></section>
+<section><h2>The challenge</h2><p>{project.summary}</p></section>
+<section><h2>My approach</h2><p>{project.contribution}</p></section>
+<section><h2>The experience</h2><p>{project.highlights}</p></section>
 {pseb && <section><h2>Three pillars of the platform</h2><div class="pillar-list"><div><b>01 / Simplifying administration</b><p>Integrated documents, registration tracking, verification, payments, and approvals.</p></div><div><b>02 / Enabling collaboration</b><p>Business listings, connections, messaging, and discovery of professional opportunities.</p></div><div><b>03 / Supporting learning</b><p>Webinars, events, and programs to encourage knowledge sharing across the industry.</p></div></div></section>}
 {pseb && <div class="screens"><figure><img src={asset('/images/pseb-progress.png')} alt="PSEB registration progress" loading="lazy"/><figcaption>Registration progress</figcaption></figure><figure><img src={asset('/images/pseb-services.png')} alt="PSEB products and services listing" loading="lazy"/><figcaption>Products and services</figcaption></figure><figure><img src={asset('/images/pseb-messaging.png')} alt="PSEB messaging view" loading="lazy"/><figcaption>Networking and messaging</figcaption></figure><figure><img src={asset('/images/pseb-superadmin.png')} alt="PSEB authority management dashboard" loading="lazy"/><figcaption>Super-admin oversight</figcaption></figure></div>}
 <section class="note"><b>About this case study</b><p>{project.notes} This is an initial portfolio draft; detailed process artifacts and verified outcomes can be added through the CMS.</p></section>
