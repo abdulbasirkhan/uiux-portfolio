@@ -8,6 +8,18 @@ const {project}=Astro.props;
 const root=import.meta.env.BASE_URL.replace(/\/$/,'');
 const asset=p=>`${root}${p}`;
 const pseb=Astro.params.slug==='pseb';
+// Pages CMS stores gallery items as { image, caption, alt } objects in project JSON.
+const customGallery=Array.isArray(project.gallery)
+  ? project.gallery.filter(item => typeof item?.image === 'string' && item.image.trim())
+  : [];
+// Preserve PSEB's existing gallery until the user adds custom entries in Pages CMS.
+const legacyPsebGallery = pseb ? [
+  {image:'/images/pseb-progress.png',caption:'Registration progress',alt:'PSEB registration progress'},
+  {image:'/images/pseb-services.png',caption:'Products and services',alt:'PSEB products and services listing'},
+  {image:'/images/pseb-messaging.png',caption:'Networking and messaging',alt:'PSEB messaging view'},
+  {image:'/images/pseb-superadmin.png',caption:'Super-admin oversight',alt:'PSEB authority management dashboard'}
+] : [];
+const gallery = customGallery.length ? customGallery : legacyPsebGallery;
 ---
 <Base title={project.title} description={project.summary}>
 <main class="case">
@@ -16,11 +28,16 @@ const pseb=Astro.params.slug==='pseb';
 <div class="hero-img"><img src={asset(project.image)} alt={`${project.title} design presentation`} /></div>
 <div class="case-content"><aside><span>PROJECT SNAPSHOT</span><p>{project.category}</p><span>FOCUS</span><p>UI/UX & visual design</p></aside>
 <div class="story">
-<section><h2>Step 1: The challenge</h2><p>{project.summary}</p></section>
-<section><h2>Step 2: My approach</h2><p>{project.contribution}</p></section>
-<section><h2>Step 3: The experience</h2><p>{project.highlights}</p></section>
+<section><h2>The challenge</h2><p>{project.summary}</p></section>
+<section><h2>My approach</h2><p>{project.contribution}</p></section>
+<section><h2>The experience</h2><p>{project.highlights}</p></section>
 {pseb && <section><h2>Three pillars of the platform</h2><div class="pillar-list"><div><b>01 / Simplifying administration</b><p>Integrated documents, registration tracking, verification, payments, and approvals.</p></div><div><b>02 / Enabling collaboration</b><p>Business listings, connections, messaging, and discovery of professional opportunities.</p></div><div><b>03 / Supporting learning</b><p>Webinars, events, and programs to encourage knowledge sharing across the industry.</p></div></div></section>}
-{pseb && <div class="screens"><figure><img src={asset('/images/pseb-progress.png')} alt="PSEB registration progress" loading="lazy"/><figcaption>Registration progress</figcaption></figure><figure><img src={asset('/images/pseb-services.png')} alt="PSEB products and services listing" loading="lazy"/><figcaption>Products and services</figcaption></figure><figure><img src={asset('/images/pseb-messaging.png')} alt="PSEB messaging view" loading="lazy"/><figcaption>Networking and messaging</figcaption></figure><figure><img src={asset('/images/pseb-superadmin.png')} alt="PSEB authority management dashboard" loading="lazy"/><figcaption>Super-admin oversight</figcaption></figure></div>}
+{gallery.length > 0 && <div class="screens">{gallery.map((item, i) => (
+  <figure>
+    <img src={asset(item.image)} alt={item.alt || item.caption || `${project.title} screenshot ${i+1}`} loading="lazy" />
+    {item.caption && <figcaption>{item.caption}</figcaption>}
+  </figure>
+))}</div>}
 <section class="note"><b>About this case study</b><p>{project.notes} This is an initial portfolio draft; detailed process artifacts and verified outcomes can be added through the CMS.</p></section>
 </div></div><div class="case-end"><a href={`${root}/#work`} class="button-primary">More projects ↗</a></div></main></Base>
 <style>
